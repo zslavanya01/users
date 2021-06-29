@@ -36,6 +36,7 @@ pipeline {
         stage('prepare artifacts') {
             steps {
                 sh '''
+                  cp target/*.jar users.jar
                   zip -r ../users.zip *
                 '''
             }
