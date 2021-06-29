@@ -9,9 +9,20 @@
 // )
 
 pipeline {
-    agent any
+    agent {
+        label 'JAVA'
+    }
 
     stages {
+
+        stage('Compile code') {
+            steps {
+                sh '''
+                  mvn compile
+                '''
+            }
+        }
+
 
         stage('prepare artifacts') {
             steps {
