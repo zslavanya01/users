@@ -23,6 +23,15 @@ pipeline {
             }
         }
 
+        stage('Make package') {
+            steps {
+                sh '''
+                  mvn package
+                '''
+            }
+        }
+
+
 
         stage('prepare artifacts') {
             steps {
